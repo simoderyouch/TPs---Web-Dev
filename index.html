@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Travaux Pratiques HTML5 — Chapitre 3 : Structure, Sémantique, Formulaires et Site Vitrine">
+  <meta name="author" content="Mohamed Ed-Deryouch">
+  <title>TPs HTML5 — Mohamed Ed-Deryouch</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">&lt;/&gt; EDDER TPs</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="tp1/index.html">TP1</a></li>
+          <li><a href="tp2/index.html">TP2</a></li>
+          <li><a href="tp3/index.html">TP3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="main-content">
+    <div class="container">
+      <span class="hero-label">Chapitre 3 — HTML5</span>
+      <h1>Travaux Pratiques<br>HTML5 Moderne</h1>
+      <p>Structure sémantique, formulaires avancés et site multi-pages. Trois TPs progressifs pour maîtriser HTML5.</p>
+      <div class="hero-actions">
+        <a href="#travaux-pratiques" class="btn btn-primary btn-lg">Explorer les TPs</a>
+        <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener"
+          class="btn btn-secondary btn-lg">Documentation MDN</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="travaux-pratiques">
+      <div class="container">
+        <div class="section-header centered">
+          <p class="overline">Travaux Pratiques</p>
+          <h2>Trois projets pour tout maîtriser</h2>
+          <p>Du CV personnel au site vitrine complet, chaque TP renforce vos compétences HTML5.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-header">
+              <span class="badge badge-beginner">Débutant</span>
+            </div>
+            <h3>TP 1 — Page de Présentation Personnelle</h3>
+            <p>Créez une page HTML5 de CV/Portfolio avec une structure sémantique complète : header, navigation,
+              compétences, expériences et liens sociaux.</p>
+            <ul
+              style="color: var(--muted-foreground); font-size: 0.75rem; margin-top: 0.75rem; padding-left: 1rem; list-style: disc; line-height: 1.8;">
+              <li>Structure sémantique (header, main, footer)</li>
+              <li>Navigation avec ancres internes</li>
+              <li>Tableau des formations/expériences</li>
+              <li>Validation W3C sans erreurs</li>
+            </ul>
+            <div class="card-footer">
+              <a href="tp1/index.html" class="card-link">Voir le TP &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <span class="badge badge-intermediate">Intermédiaire</span>
+            </div>
+            <h3>TP 2 — Formulaire d'Inscription</h3>
+            <p>Construisez un formulaire d'inscription complet avec validation HTML5 native : patterns, types, messages
+              d'erreur et accessibilité.</p>
+            <ul
+              style="color: var(--muted-foreground); font-size: 0.75rem; margin-top: 0.75rem; padding-left: 1rem; list-style: disc; line-height: 1.8;">
+              <li>10+ types de champs différents</li>
+              <li>Validation pattern (email, tél, password)</li>
+              <li>Fieldsets et autocomplete</li>
+              <li>Messages d'erreur personnalisés</li>
+            </ul>
+            <div class="card-footer">
+              <a href="tp2/index.html" class="card-link">Voir le TP &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <span class="badge badge-advanced">Avancé</span>
+            </div>
+            <h3>TP 3 — Site Vitrine Multi-Pages</h3>
+            <p>Développez un site web complet de 5 pages pour NullDraft AI, une agence d'intelligence artificielle :
+              accueil, équipe, services, galerie et contact.</p>
+            <ul
+              style="color: var(--muted-foreground); font-size: 0.75rem; margin-top: 0.75rem; padding-left: 1rem; list-style: disc; line-height: 1.8;">
+              <li>5 pages interconnectées</li>
+              <li>Images responsives (srcset, picture)</li>
+              <li>Tableau de tarifs, vidéo, iframe</li>
+              <li>Métadonnées SEO / Open Graph</li>
+            </ul>
+            <div class="card-footer">
+              <a href="tp3/index.html" class="card-link">Voir le TP &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header centered">
+          <p class="overline">Résumé du chapitre</p>
+          <h2>Points clés couverts</h2>
+          <p>Les compétences essentielles de HTML5 abordées dans ces travaux pratiques.</p>
+        </div>
+
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size: 0.8125rem;">Structure Sémantique</h3>
+            <p style="font-size: 0.75rem;">header, nav, main, section, article, aside, footer</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size: 0.8125rem;">Formulaires HTML5</h3>
+            <p style="font-size: 0.75rem;">input, validation, pattern, required, fieldset</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size: 0.8125rem;">Multimédia Natif</h3>
+            <p style="font-size: 0.75rem;">audio, video, source, track, iframe</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size: 0.8125rem;">Accessibilité</h3>
+            <p style="font-size: 0.75rem;">ARIA, alt, labels, skip links, navigation clavier</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size: 0.8125rem;">Responsive Design</h3>
+            <p style="font-size: 0.75rem;">srcset, picture, media queries, viewport</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ressources">
+      <div class="container">
+        <div class="section-header centered">
+          <p class="overline">Ressources</p>
+          <h2>Liens utiles</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener" class="card"
+            style="text-decoration:none;">
+            <h3>MDN Web Docs</h3>
+            <p>Documentation HTML complète et à jour par Mozilla.</p>
+          </a>
+          <a href="https://validator.w3.org/" target="_blank" rel="noopener" class="card" style="text-decoration:none;">
+            <h3>W3C Validator</h3>
+            <p>Validez votre HTML pour garantir la conformité aux standards.</p>
+          </a>
+          <a href="https://wave.webaim.org/" target="_blank" rel="noopener" class="card" style="text-decoration:none;">
+            <h3>WAVE</h3>
+            <p>Outil de test d'accessibilité web.</p>
+          </a>
+          <a href="https://caniuse.com/" target="_blank" rel="noopener" class="card" style="text-decoration:none;">
+            <h3>Can I Use</h3>
+            <p>Tables de compatibilité des navigateurs.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="Navigation secondaire">
+        <a href="tp1/index.html">TP1 — CV</a>
+        <a href="tp2/index.html">TP2 — Formulaire</a>
+        <a href="tp3/index.html">TP3 — Site Vitrine</a>
+      </nav>
+      <p>&copy; 2025 Mohamed Ed-Deryouch &middot; Travaux Pratiques HTML5</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function () {
+      var list = document.getElementById('navList');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      list.classList.toggle('active');
+      this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+    });
+  </script>
+</body>
+
+</html>

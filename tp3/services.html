@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NullDraft AI — Services IA, NLP, MLOps, Data Engineering et Cloud.">
+    <meta property="og:title" content="NullDraft AI — Services">
+    <meta property="og:type" content="website">
+    <title>Services — NullDraft AI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .service-hero {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">NullDraft AI</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">Équipe</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="gallery.html">Réalisations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../index.html" class="btn btn-sm btn-ghost">&larr; TPs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Retour à l'accueil</a>
+
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+                <p class="overline">Nos Services</p>
+                <h1 style="font-size: clamp(1.5rem, 3vw, 2rem);">Solutions IA sur mesure</h1>
+                <p>De la stratégie data à la mise en production. Cliquez sur chaque service pour en savoir plus.</p>
+            </div>
+
+            <img src="images/cloud-infra.png" alt="Infrastructure cloud et serveurs haute disponibilité"
+                class="service-hero">
+
+            <section aria-label="Liste des services">
+                <details open>
+                    <summary>NLP &amp; Large Language Models</summary>
+                    <div>
+                        <p>Exploitez la puissance des modèles de langage pour automatiser l'analyse de vos données
+                            textuelles.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>Chatbots RAG (Retrieval-Augmented Generation) avec LangChain</li>
+                            <li>Classification de textes et analyse de sentiment multi-langues</li>
+                            <li>Extraction d'entités nommées (NER) et résumé automatique</li>
+                            <li>Fine-tuning de modèles BERT, GPT et Llama</li>
+                            <li>Recherche sémantique avec bases vectorielles (Qdrant, Pinecone)</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Computer Vision &amp; Image Analysis</summary>
+                    <div>
+                        <p>Donnez des yeux à vos systèmes avec nos solutions de vision par ordinateur.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>Détection et classification d'objets en temps réel</li>
+                            <li>OCR intelligent pour la numérisation de documents</li>
+                            <li>Analyse d'images médicales et industrielles</li>
+                            <li>Segmentation sémantique et estimation de pose</li>
+                            <li>Déploiement edge avec TensorFlow Lite et ONNX</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Data Engineering &amp; Real-Time Pipelines</summary>
+                    <div>
+                        <p>Architectures de données scalables pour alimenter vos modèles ML en continu.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>Streaming temps réel avec Apache Kafka et Spark Streaming</li>
+                            <li>Traitement distribué PySpark sur AWS EMR</li>
+                            <li>ETL automatisés avec Airflow et Prefect</li>
+                            <li>Data lakes S3 avec catalogage Glue</li>
+                            <li>Optimisation de requêtes SQL et tuning PostgreSQL</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>MLOps &amp; Cloud Infrastructure</summary>
+                    <div>
+                        <p>Du notebook au production-ready. Déployez vos modèles avec confiance.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>AWS SageMaker pour le training et l'inference</li>
+                            <li>Infrastructure as Code avec Terraform et CDK</li>
+                            <li>Conteneurisation Docker et orchestration ECS/Kubernetes</li>
+                            <li>CI/CD ML avec GitHub Actions et MLflow</li>
+                            <li>Monitoring de modèles en production et drift detection</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Développement Web Full Stack</summary>
+                    <div>
+                        <p>Interfaces modernes pour vos applications IA et dashboards analytiques.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>Applications React 19 / Next.js avec TypeScript</li>
+                            <li>APIs RESTful et GraphQL avec FastAPI et Express</li>
+                            <li>Dashboards interactifs en temps réel</li>
+                            <li>Progressive Web Apps et responsive design</li>
+                            <li>Accessibilité WCAG 2.1 AA</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Conseil &amp; Audit IA</summary>
+                    <div>
+                        <p>Évaluez votre maturité data et définissez votre roadmap IA.</p>
+                        <ul
+                            style="padding-left:1.25rem; list-style:disc; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.8;">
+                            <li>Audit de données et identification d'opportunités ML</li>
+                            <li>Stratégie data et feuille de route IA</li>
+                            <li>Évaluation de la qualité des données</li>
+                            <li>Conformité RGPD et IA responsable</li>
+                            <li>Formation des équipes techniques</li>
+                        </ul>
+                    </div>
+                </details>
+            </section>
+
+            <section class="section" aria-labelledby="pricing-title">
+                <div class="section-header centered">
+                    <p class="overline">Tarification</p>
+                    <h2 id="pricing-title">Nos Forfaits IA</h2>
+                    <p>Des offres adaptées à chaque étape de votre parcours IA.</p>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <caption class="sr-only">Tableau comparatif des forfaits IA</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Fonctionnalité</th>
+                                <th scope="col">Explorer</th>
+                                <th scope="col">Pro</th>
+                                <th scope="col">Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Analyse &amp; Audit</strong></td>
+                                <td>Audit basique</td>
+                                <td>Audit complet + roadmap</td>
+                                <td>Audit + stratégie long terme</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modèles ML</strong></td>
+                                <td>1 modèle pré-entraîné</td>
+                                <td>Modèle fine-tuné</td>
+                                <td>Modèles custom + production</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Données</strong></td>
+                                <td>Jusqu'à 10K lignes</td>
+                                <td>Jusqu'à 1M lignes</td>
+                                <td>Illimité</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Infrastructure</strong></td>
+                                <td>Shared cloud</td>
+                                <td>AWS dédié</td>
+                                <td>Multi-cloud, on-premise</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dashboard</strong></td>
+                                <td>Template</td>
+                                <td>Sur mesure</td>
+                                <td>Design system complet</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Support</strong></td>
+                                <td>Email (48h)</td>
+                                <td>Prioritaire (4h)</td>
+                                <td>24/7 dédié + Slack</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prix</strong></td>
+                                <td><strong>8 000 MAD</strong></td>
+                                <td><strong>25 000 MAD</strong></td>
+                                <td><strong>Sur devis</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Plan du site">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">Équipe</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Réalisations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>&copy; 2025 NullDraft AI &middot; Intelligence Artificielle &amp; Data</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            var list = document.getElementById('navList');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            list.classList.toggle('active');
+            this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+        });
+    </script>
+</body>
+
+</html>

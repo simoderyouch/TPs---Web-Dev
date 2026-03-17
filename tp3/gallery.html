@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NullDraft AI — Nos réalisations en IA, data engineering et applications web.">
+    <meta property="og:title" content="NullDraft AI — Réalisations">
+    <meta property="og:type" content="website">
+    <title>Réalisations — NullDraft AI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-card {
+            overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .project-card .project-body {
+            padding: 1.25rem;
+        }
+
+        .project-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .project-card p {
+            color: var(--muted-foreground);
+            font-size: 0.8125rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">NullDraft AI</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">Équipe</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html" class="active">Réalisations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../index.html" class="btn btn-sm btn-ghost">&larr; TPs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Retour à l'accueil</a>
+
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <p class="overline">Réalisations</p>
+                <h1 style="font-size: clamp(1.5rem, 3vw, 2rem);">Projets qui parlent d'eux-mêmes</h1>
+                <p>Une sélection de projets illustrant notre expertise en IA, data et développement.</p>
+            </div>
+
+            <!-- Project cards with images -->
+            <div class="cards-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 2.5rem;">
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/nlp-platform/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/nlp-platform/400/250"
+                            srcset="https://picsum.photos/seed/nlp-platform/400/250 400w, https://picsum.photos/seed/nlp-platform/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw"
+                            alt="Plateforme NLP d'analyse de sentiment avec dashboard temps réel" loading="lazy"
+                            width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>Plateforme NLP — Analyse de Sentiment</h3>
+                        <p>Pipeline complet Flask + React analysant 50K+ avis clients/jour. Modèle BERT fine-tuné avec
+                            94% de précision.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">BERT</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/fake-news/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/fake-news/400/250"
+                            srcset="https://picsum.photos/seed/fake-news/400/250 400w, https://picsum.photos/seed/fake-news/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw" alt="Système de détection de fake news en temps réel"
+                            loading="lazy" width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>Détection de Fake News — Temps Réel</h3>
+                        <p>Streaming Kafka + PySpark traitant 1M+ articles/heure. Classification multi-labels avec
+                            transformers.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">Transformers</span>
+                            <span class="skill-tag">AWS Batch</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/rag-chatbot/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/rag-chatbot/400/250"
+                            srcset="https://picsum.photos/seed/rag-chatbot/400/250 400w, https://picsum.photos/seed/rag-chatbot/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw" alt="Chatbot RAG avec interface conversationnelle"
+                            loading="lazy" width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>Chatbot RAG — Support Client IA</h3>
+                        <p>Chatbot LangChain + Qdrant connecté à 15K pages de documentation. Réduction de 60% des
+                            tickets support.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">Qdrant</span>
+                            <span class="skill-tag">GPT-4</span>
+                            <span class="skill-tag">Next.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/cloud-arch/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/cloud-arch/400/250"
+                            srcset="https://picsum.photos/seed/cloud-arch/400/250 400w, https://picsum.photos/seed/cloud-arch/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw" alt="Architecture cloud multi-région AWS"
+                            loading="lazy" width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>Architecture Cloud — Multi-Région AWS</h3>
+                        <p>Infrastructure Terraform avec auto-scaling ECS, RDS multi-AZ et S3 cross-region replication.
+                            99.99% uptime.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">AWS ECS</span>
+                            <span class="skill-tag">RDS</span>
+                            <span class="skill-tag">CloudWatch</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/ocr-docs/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/ocr-docs/400/250"
+                            srcset="https://picsum.photos/seed/ocr-docs/400/250 400w, https://picsum.photos/seed/ocr-docs/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw" alt="Système OCR de numérisation de documents"
+                            loading="lazy" width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>OCR Intelligent — Numérisation de Documents</h3>
+                        <p>Pipeline de digitalisation traitant 10K pages/jour. Extraction structurée de factures et
+                            formulaires administratifs.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Tesseract</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" style="padding: 0; overflow: hidden;">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://picsum.photos/seed/dashboard-ai/800/500"
+                            type="image/jpeg">
+                        <img src="https://picsum.photos/seed/dashboard-ai/400/250"
+                            srcset="https://picsum.photos/seed/dashboard-ai/400/250 400w, https://picsum.photos/seed/dashboard-ai/800/500 800w"
+                            sizes="(max-width: 600px) 100vw, 50vw" alt="Dashboard analytique IA avec prédictions"
+                            loading="lazy" width="400" height="250">
+                    </picture>
+                    <div class="project-body">
+                        <h3>Dashboard IA — Prédiction de Churn</h3>
+                        <p>Dashboard React + FastAPI prédisant le churn client avec 89% de précision. Modèle XGBoost
+                            re-entraîné quotidiennement.</p>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">XGBoost</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">MLflow</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Tech stack -->
+            <section class="section" style="padding-top: 0;">
+                <div class="section-header centered">
+                    <h2>Notre stack technique</h2>
+                </div>
+                <div class="skills-grid" style="justify-content: center;">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Qdrant</span>
+                    <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">MLflow</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Plan du site">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">Équipe</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Réalisations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>&copy; 2025 NullDraft AI &middot; Intelligence Artificielle &amp; Data</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            var list = document.getElementById('navList');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            list.classList.toggle('active');
+            this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TP1 — CV de Mohamed Ed-Deryouch, Ingénieur IA & Machine Learning">
+    <title>TP1 — CV / Portfolio | Mohamed Ed-Deryouch</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">&lt;/&gt; EDDER TPs</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="index.html" class="active">TP1</a></li>
+                    <li><a href="../tp2/index.html">TP2</a></li>
+                    <li><a href="../tp3/index.html">TP3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Retour aux TPs</a>
+
+            <!-- En-tête du profil -->
+            <section class="profile-header" id="about" aria-label="Informations personnelles">
+                <img src="mohamededderyouch.jpg" alt="Photo de Mohamed Ed-Deryouch" class="profile-avatar-placeholder"
+                    style="object-fit: cover;">
+                <div class="profile-info">
+                    <h1>Mohamed Ed-Deryouch</h1>
+                    <p class="title">Ingénieur IA — Ingénieur Machine Learning — Data Scientist</p>
+                    <div class="contact-row">
+                        <span>+212 701316014</span>
+                        <span><a href="mailto:mohamededderyouch5@gmail.com">mohamededderyouch5@gmail.com</a></span>
+                        <span><a href="https://linkedin.com/in/mohamededderyouch/" target="_blank"
+                                rel="noopener">LinkedIn</a></span>
+                        <span><a href="https://github.com/simoderyouch" target="_blank" rel="noopener">GitHub</a></span>
+                        <span>Beni Mellal, Maroc</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation interne -->
+            <nav aria-label="Sections du CV" style="margin-bottom: 2.5rem;">
+                <div class="skills-grid">
+                    <a href="#about" class="skill-tag">À propos</a>
+                    <a href="#experience" class="skill-tag">Expérience</a>
+                    <a href="#projects" class="skill-tag">Projets</a>
+                    <a href="#education" class="skill-tag">Formation</a>
+                    <a href="#skills" class="skill-tag">Compétences</a>
+                    <a href="#certifications" class="skill-tag">Certifications</a>
+                    <a href="#contact" class="skill-tag">Contact</a>
+                </div>
+            </nav>
+
+            <hr class="separator">
+
+            <!-- Profil -->
+            <section class="section" id="profile" aria-labelledby="profile-title" style="padding-top:0;">
+                <h2 id="profile-title" style="margin-bottom: 0.75rem;">Profil</h2>
+                <p style="color: var(--muted-foreground); line-height: 1.8; font-size: 0.875rem;">
+                    Ingénieur IA orienté résultats avec <strong>2 ans d'expérience</strong> dans le développement de
+                    solutions de Machine Learning de bout en bout et de systèmes intelligents. Expertise avérée dans la
+                    construction d'applications IA prêtes pour la production avec <strong>Python</strong>, les
+                    frameworks
+                    de Deep Learning et les technologies cloud. Livraison réussie de <strong>systèmes Q&amp;R basés sur
+                        RAG</strong>,
+                    de modèles NLP en temps réel et de pipelines de données scalables ayant amélioré la vitesse de prise
+                    de décision de <strong>40%</strong>. Solides compétences en <strong>MLOps</strong>, traitement big
+                    data
+                    et développement full-stack avec <strong>React.js</strong> et <strong>FastAPI</strong>.
+                </p>
+            </section>
+
+            <!-- Expériences professionnelles -->
+            <section class="section" id="experience" aria-labelledby="experience-title">
+                <h2 id="experience-title" style="margin-bottom: 1.25rem;">Expériences Professionnelles</h2>
+
+                <div class="table-wrapper" style="margin-bottom: 2rem;">
+                    <table>
+                        <caption class="sr-only">Tableau des expériences professionnelles</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Poste</th>
+                                <th scope="col">Entreprise</th>
+                                <th scope="col">Période</th>
+                                <th scope="col">Lieu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ingénieur Machine Learning</strong></td>
+                                <td>Haut-Commissariat au Plan</td>
+                                <td>Avr 2024 – Juil 2024</td>
+                                <td>Beni Mellal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Développeur / Analyste Data</strong></td>
+                                <td>EST Fquih Ben Salah</td>
+                                <td>Juil 2023 – Nov 2023</td>
+                                <td>Fquih Ben Salah</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-meta">Avr 2024 – Juil 2024 &middot; Beni Mellal</span>
+                    <h3>Ingénieur Machine Learning (Stage) — Haut-Commissariat au Plan</h3>
+                    <ul
+                        style="color: var(--muted-foreground); font-size: 0.8125rem; line-height: 1.8; padding-left: 1rem; list-style: disc;">
+                        <li>Conception et déploiement d'un système de Q&amp;R intelligent basé sur la <strong>Génération
+                                Augmentée par Récupération (RAG)</strong>, améliorant l'accessibilité des données et
+                            réduisant le temps de réponse de 60%</li>
+                        <li>Intégration du LLM <strong>Mistral</strong> avec le framework <strong>LangChain</strong>
+                            pour traiter plus de 10 000 documents statistiques, permettant l'extraction intelligente
+                            d'informations et la recherche sémantique</li>
+                        <li>Construction d'une application full-stack avec frontend <strong>React.js</strong>, backend
+                            <strong>FastAPI</strong> et base de données vectorielle <strong>Qdrant</strong>
+                        </li>
+                        <li>Mise en place de pipelines de prétraitement NLP et intégration <strong>PostgreSQL</strong>
+                            pour la gestion des données structurées</li>
+                        <li>Livraison d'un système prêt pour la production ayant amélioré la vitesse de prise de
+                            décision pour l'analyse statistique gouvernementale</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-meta">Juil 2023 – Nov 2023 &middot; Fquih Ben Salah</span>
+                    <h3>Développeur Logiciel / Analyste Data (Stage) — EST Fquih Ben Salah</h3>
+                    <ul
+                        style="color: var(--muted-foreground); font-size: 0.8125rem; line-height: 1.8; padding-left: 1rem; list-style: disc;">
+                        <li>Développement d'un système intelligent de gestion de pointage avec <strong>Django</strong>,
+                            <strong>React.js</strong> et <strong>PostgreSQL</strong>, automatisant 95% des processus de
+                            suivi manuel
+                        </li>
+                        <li>Création d'un tableau de bord de suivi en temps réel traitant plus de 1 000 dossiers
+                            étudiants par jour avec génération automatique de rapports</li>
+                        <li>Implémentation d'un module d'analyse prédictive par Machine Learning pour identifier les
+                            étudiants à risque avec une <strong>précision de 85%</strong></li>
+                        <li>Conception de tableaux de bord interactifs <strong>Power BI</strong> pour l'analyse des
+                            tendances de performance, améliorant la prise de décision administrative de 30%</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projets clés -->
+            <section class="section" id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title" style="margin-bottom: 1.25rem;">Projets Clés</h2>
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <article class="card">
+                        <div class="card-header">
+                            <span class="badge badge-advanced">Avr 2025</span>
+                        </div>
+                        <h3>Système de Détection de Fake News en Temps Réel</h3>
+                        <ul
+                            style="color: var(--muted-foreground); font-size: 0.75rem; margin-top: 0.5rem; padding-left: 1rem; list-style: disc; line-height: 1.8;">
+                            <li>Construction d'un système NLP avancé en temps réel utilisant le modèle
+                                <strong>XLM-RoBERTa</strong>, atteignant 92% de précision dans la détection de
+                                désinformation multilingue
+                            </li>
+                            <li>Implémentation d'<strong>Apache Kafka</strong> et <strong>PySpark</strong> pour le
+                                streaming de données en temps réel et l'inférence de modèles à grande échelle</li>
+                            <li>Analyse comparative complète entre les modèles ML classiques, Deep Learning et
+                                Transformers</li>
+                            <li>Déploiement d'un système d'alerte automatisé avec interface web pour la surveillance
+                                continue</li>
+                        </ul>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">XLM-RoBERTa</span>
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">NLP</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-header">
+                            <span class="badge badge-intermediate">Juin 2024</span>
+                        </div>
+                        <h3>PFE — Plateforme d'Analyse de Sentiment par IA</h3>
+                        <ul
+                            style="color: var(--muted-foreground); font-size: 0.75rem; margin-top: 0.5rem; padding-left: 1rem; list-style: disc; line-height: 1.8;">
+                            <li>Solution d'analyse de sentiment de bout en bout traitant <strong>plus de 10 000</strong>
+                                retours étudiants avec des techniques NLP avancées</li>
+                            <li>Fine-tuning des modèles <strong>BERT</strong> et <strong>LSTM</strong> atteignant 90% de
+                                précision en classification de sentiment multi-classes</li>
+                            <li>Création d'un système d'enquête intelligent avec frontend <strong>React.js</strong> et
+                                API <strong>Flask</strong> pour la collecte et l'analyse de feedback en temps réel</li>
+                            <li>Génération d'insights actionnables aboutissant à une amélioration de 25% de la
+                                satisfaction étudiante</li>
+                        </ul>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">BERT</span>
+                            <span class="skill-tag">LSTM</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Flask</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Formation -->
+            <section class="section" id="education" aria-labelledby="education-title">
+                <h2 id="education-title" style="margin-bottom: 1.25rem;">Formation</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <caption class="sr-only">Tableau des formations</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Diplôme</th>
+                                <th scope="col">Établissement</th>
+                                <th scope="col">Période</th>
+                                <th scope="col">Lieu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Diplôme d'Ingénieur</strong><br><span class="text-muted text-xs">Génie
+                                        Logiciel et Systèmes Informatiques Distribués</span></td>
+                                <td>ENSET Mohammedia</td>
+                                <td>2025 – Présent</td>
+                                <td>Mohammedia</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Licence Professionnelle</strong><br><span
+                                        class="text-muted text-xs">Infrastructure, Traitement et Analyse du Big
+                                        Data</span></td>
+                                <td>Université Sultan Moulay Slimane — EST</td>
+                                <td>2024 – 2025</td>
+                                <td>Fquih Ben Salah</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DUT</strong><br><span class="text-muted text-xs">Informatique Décisionnelle
+                                        et Statistique</span></td>
+                                <td>Université Sultan Moulay Slimane — EST</td>
+                                <td>2022 – 2024</td>
+                                <td>Fquih Ben Salah</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Compétences techniques -->
+            <section class="section" id="skills" aria-labelledby="skills-title">
+                <h2 id="skills-title" style="margin-bottom: 1.25rem;">Compétences Techniques</h2>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="card">
+                        <h3>Programmation &amp; Frameworks</h3>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Django</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Machine Learning &amp; IA</h3>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Algorithmes ML</span>
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">BERT</span>
+                            <span class="skill-tag">XLM-RoBERTa</span>
+                            <span class="skill-tag">Vision par Ordinateur</span>
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">Fine-tuning</span>
+                            <span class="skill-tag">Optimisation d'hyperparamètres</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Ingénierie de Données &amp; Visualisation</h3>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Pipelines ETL</span>
+                            <span class="skill-tag">Talend</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Entreposage de données</span>
+                            <span class="skill-tag">Informatique Décisionnelle</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>MLOps &amp; Infrastructure</h3>
+                        <div class="skills-grid" style="margin-top: 0.75rem;">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Apache Airflow</span>
+                            <span class="skill-tag">Apache Kafka</span>
+                            <span class="skill-tag">Apache Spark</span>
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Qdrant</span>
+                            <span class="skill-tag">Pinecone</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section" id="certifications" aria-labelledby="certifications-title">
+                <h2 id="certifications-title" style="margin-bottom: 1.25rem;">Certifications &amp; Formations</h2>
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="badge badge-advanced">Avr 2025</span>
+                        </div>
+                        <h3 style="font-size: 0.875rem;">Spécialisation Machine Learning</h3>
+                        <p>DeepLearning.AI &amp; Université Stanford</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="badge badge-intermediate">Déc 2024</span>
+                        </div>
+                        <h3 style="font-size: 0.875rem;">Data Scientist Associate</h3>
+                        <p>DataCamp</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="badge badge-beginner">Déc 2023</span>
+                        </div>
+                        <h3 style="font-size: 0.875rem;">Certificat Professionnel en Data Science</h3>
+                        <p>IBM</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="section" id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title" style="margin-bottom: 1.25rem;">Contact</h2>
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <a href="mailto:mohamededderyouch5@gmail.com" class="card"
+                        style="text-decoration:none; text-align:center;">
+                        <h3 style="font-size:0.8125rem;">Email</h3>
+                        <p>mohamededderyouch5@gmail.com</p>
+                    </a>
+                    <a href="tel:+212701316014" class="card" style="text-decoration:none; text-align:center;">
+                        <h3 style="font-size:0.8125rem;">Téléphone</h3>
+                        <p>+212 701316014</p>
+                    </a>
+                    <a href="https://linkedin.com/in/mohamededderyouch/" target="_blank" rel="noopener" class="card"
+                        style="text-decoration:none; text-align:center;">
+                        <h3 style="font-size:0.8125rem;">LinkedIn</h3>
+                        <p>mohamededderyouch</p>
+                    </a>
+                    <a href="https://github.com/simoderyouch" target="_blank" rel="noopener" class="card"
+                        style="text-decoration:none; text-align:center;">
+                        <h3 style="font-size:0.8125rem;">GitHub</h3>
+                        <p>simoderyouch</p>
+                    </a>
+                    <div class="card" style="text-align:center;">
+                        <h3 style="font-size:0.8125rem;">Localisation</h3>
+                        <p>Beni Mellal, Maroc</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Navigation secondaire">
+                <a href="../index.html">Accueil</a>
+                <a href="../tp2/index.html">TP2</a>
+                <a href="../tp3/index.html">TP3</a>
+            </nav>
+            <p>&copy; 2025 Mohamed Ed-Deryouch &middot; TP1 : CV / Portfolio</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            var list = document.getElementById('navList');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            list.classList.toggle('active');
+            this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TP2 — Formulaire d'inscription complet avec validation HTML5">
+    <title>TP2 — Formulaire d'Inscription | TPs HTML5</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .password-requirements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.125rem;
+            margin-top: 0.375rem;
+        }
+
+        .password-requirements span {
+            font-size: 0.6875rem;
+            color: var(--muted-foreground);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">&lt;/&gt; EDDER TPs</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../tp1/index.html">TP1</a></li>
+                    <li><a href="index.html" class="active">TP2</a></li>
+                    <li><a href="../tp3/index.html">TP3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Retour aux TPs</a>
+
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <p class="overline">TP 2 — Intermédiaire</p>
+                <h1 style="font-size: clamp(1.5rem, 3vw, 2rem);">Formulaire d'Inscription</h1>
+                <p>Formulaire complet avec validation HTML5 native, patterns et messages d'erreur personnalisés.</p>
+            </div>
+
+            <div class="container" style="padding: 0; margin-bottom: 3rem;">
+                <form id="registrationForm" novalidate>
+
+                    <fieldset>
+                        <legend>Informations Personnelles</legend>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required minlength="2" maxlength="50"
+                                    placeholder="Mohamed" autocomplete="given-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required minlength="2" maxlength="50"
+                                    placeholder="Ed-Deryouch" autocomplete="family-name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adresse email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="nom@exemple.com"
+                                autocomplete="email">
+                            <p class="form-hint">Nous ne partagerons jamais votre email.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required pattern="^(\+212|0)[5-7]\d{8}$"
+                                placeholder="+212 6XXXXXXXX" autocomplete="tel"
+                                title="Format marocain : +212 6XXXXXXXX ou 06XXXXXXXX">
+                            <p class="form-hint">Format marocain : +212 6XXXXXXXX ou 06XXXXXXXX</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">Date de naissance <span class="required">*</span></label>
+                            <input type="date" id="birthdate" name="birthdate" required max="2008-01-01"
+                                autocomplete="bday">
+                            <p class="form-hint">Vous devez avoir au moins 18 ans.</p>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Genre</legend>
+                        <div class="form-check">
+                            <input type="radio" id="genderMale" name="gender" value="male" required>
+                            <label for="genderMale">Homme</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="genderFemale" name="gender" value="female">
+                            <label for="genderFemale">Femme</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="genderOther" name="gender" value="other">
+                            <label for="genderOther">Autre / Préfère ne pas répondre</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Sécurité</legend>
+
+                        <div class="form-group">
+                            <label for="password">Mot de passe <span class="required">*</span></label>
+                            <input type="password" id="password" name="password" required minlength="8"
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" placeholder="Minimum 8 caractères"
+                                autocomplete="new-password"
+                                title="Min 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre">
+                            <div class="password-requirements">
+                                <span>Min. 8 caractères</span>
+                                <span>1 lettre majuscule</span>
+                                <span>1 lettre minuscule</span>
+                                <span>1 chiffre</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmer le mot de passe <span
+                                    class="required">*</span></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8"
+                                placeholder="Retapez votre mot de passe" autocomplete="new-password">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Localisation</legend>
+
+                        <div class="form-group">
+                            <label for="country">Pays <span class="required">*</span></label>
+                            <input type="text" id="country" name="country" required list="countryList"
+                                placeholder="Sélectionnez ou tapez un pays" autocomplete="country-name">
+                            <datalist id="countryList">
+                                <option value="Maroc">
+                                <option value="France">
+                                <option value="Belgique">
+                                <option value="Canada">
+                                <option value="Suisse">
+                                <option value="Tunisie">
+                                <option value="Algérie">
+                                <option value="Sénégal">
+                                <option value="Allemagne">
+                                <option value="Espagne">
+                                <option value="États-Unis">
+                                <option value="Royaume-Uni">
+                            </datalist>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <select id="city" name="city" autocomplete="address-level2">
+                                <option value="">-- Choisir une ville --</option>
+                                <optgroup label="Maroc">
+                                    <option value="beni-mellal">Beni Mellal</option>
+                                    <option value="casablanca">Casablanca</option>
+                                    <option value="rabat">Rabat</option>
+                                    <option value="marrakech">Marrakech</option>
+                                    <option value="fes">Fès</option>
+                                    <option value="mohammedia">Mohammedia</option>
+                                </optgroup>
+                                <optgroup label="France">
+                                    <option value="paris">Paris</option>
+                                    <option value="lyon">Lyon</option>
+                                    <option value="marseille">Marseille</option>
+                                </optgroup>
+                                <optgroup label="Autre">
+                                    <option value="other">Autre</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Centres d'intérêt</legend>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestDev" name="interests" value="development">
+                            <label for="interestDev">Développement Web</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestAI" name="interests" value="ai">
+                            <label for="interestAI">Intelligence Artificielle</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestCloud" name="interests" value="cloud">
+                            <label for="interestCloud">Cloud Computing</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestCyber" name="interests" value="cybersecurity">
+                            <label for="interestCyber">Cybersécurité</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestMobile" name="interests" value="mobile">
+                            <label for="interestMobile">Développement Mobile</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="interestData" name="interests" value="data">
+                            <label for="interestData">Data Science</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Biographie</legend>
+                        <div class="form-group">
+                            <label for="bio">Parlez-nous de vous</label>
+                            <textarea id="bio" name="bio" rows="4" maxlength="500"
+                                placeholder="Décrivez-vous en quelques mots (max 500 caractères)..."
+                                autocomplete="off"></textarea>
+                            <p class="form-hint"><span id="bioCount">0</span> / 500 caractères</p>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Photo de profil</legend>
+                        <div class="form-group">
+                            <label for="avatar">Télécharger une photo</label>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg, image/webp">
+                            <p class="form-hint">Formats acceptés : PNG, JPEG, WebP. Taille max : 5 Mo.</p>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Conditions</legend>
+                        <div class="form-check">
+                            <input type="checkbox" id="cgu" name="cgu" required>
+                            <label for="cgu">J'accepte les <a href="#"
+                                    style="text-decoration:underline; text-underline-offset:3px;">Conditions Générales
+                                    d'Utilisation</a> <span class="required">*</span></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Je souhaite recevoir la newsletter</label>
+                        </div>
+                    </fieldset>
+
+                    <div style="display:flex; gap:0.75rem; margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-primary btn-lg">Créer mon compte</button>
+                        <button type="reset" class="btn btn-secondary btn-lg">Réinitialiser</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Navigation secondaire">
+                <a href="../index.html">Accueil</a>
+                <a href="../tp1/index.html">TP1</a>
+                <a href="../tp3/index.html">TP3</a>
+            </nav>
+            <p>&copy; 2025 Mohamed Ed-Deryouch &middot; TP2 : Formulaire d'Inscription</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            var list = document.getElementById('navList');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            list.classList.toggle('active');
+            this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+        });
+
+        var bio = document.getElementById('bio');
+        var bioCount = document.getElementById('bioCount');
+        bio.addEventListener('input', function () {
+            bioCount.textContent = bio.value.length;
+        });
+
+        var form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirmPassword');
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity('Les mots de passe ne correspondent pas.');
+            } else {
+                confirmPassword.setCustomValidity('');
+            }
+            if (form.checkValidity()) {
+                alert('Inscription réussie ! (démo)');
+                form.reset();
+                bioCount.textContent = '0';
+            } else {
+                form.reportValidity();
+            }
+        });
+
+        document.getElementById('confirmPassword').addEventListener('input', function () {
+            this.setCustomValidity('');
+        });
+
+        document.querySelectorAll('[required]').forEach(function (input) {
+            input.addEventListener('invalid', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Ce champ est obligatoire.');
+                } else if (this.validity.patternMismatch) {
+                    if (this.name === 'phone') this.setCustomValidity('Format marocain : +212 6XXXXXXXX ou 06XXXXXXXX');
+                    else if (this.name === 'password') this.setCustomValidity('Min 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre.');
+                } else if (this.validity.typeMismatch && this.type === 'email') {
+                    this.setCustomValidity('Veuillez entrer une adresse email valide.');
+                }
+            });
+            input.addEventListener('input', function () {
+                this.setCustomValidity('');
+            });
+        });
+    </script>
+</body>
+
+</html>
