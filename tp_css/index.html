@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TP CSS3 — Solutions des Travaux Pratiques">
+    <title>TP CSS3 — Solutions | TPs Web</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* CSS reset & variables for TP exercises */
+        body {
+            background-color: #000 !important;
+            color: #f8f9fa !important;
+        }
+
+        .site-header,
+        .site-footer {
+            background-color: #111 !important;
+            border-color: #333 !important;
+        }
+
+        .tp-exercise {
+            background: #111 !important;
+            border: 1px solid #333 !important;
+            border-radius: var(--radius, 8px);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            color: #ddd !important;
+        }
+
+        .demo-box {
+            padding: 1.5rem;
+            border: 1px dashed #444 !important;
+            border-radius: 8px;
+            margin-top: 1rem;
+            background-color: #1a1a1a !important;
+            color: #fff !important;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .ex3-card {
+            background: #222 !important;
+            border-color: #444 !important;
+            color: #eee !important;
+        }
+
+        .ex3-navbar {
+            background: #222 !important;
+            border-color: #444 !important;
+        }
+
+        .ex2-container {
+            background: #222 !important;
+        }
+
+        .ex4-page-layout {
+            background: #111 !important;
+            border-color: #333 !important;
+        }
+
+        .ex4-page-layout>* {
+            background: #222 !important;
+            border-color: #444 !important;
+            color: #eee !important;
+        }
+
+        .answer-list li {
+            background: #222 !important;
+            color: #ddd !important;
+            border-left-color: #0d6efd !important;
+        }
+
+        hr {
+            border-top-color: #333 !important;
+        }
+
+        .question-text {
+            color: #66b2ff !important;
+        }
+
+        .code-caption {
+            color: #aaa !important;
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: var(--primary, #0056b3);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-caption {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: -0.5rem;
+            font-style: italic;
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: var(--radius, 8px);
+            overflow-x: auto;
+            font-size: 0.875rem;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: Consolas, Monaco, "Andale Mono", monospace;
+        }
+
+        /* Exercice 2.2 : Box Model Centrage */
+        .ex2-container {
+            position: relative;
+            height: 200px;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+
+        .ex2-center {
+            width: 250px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Exercice 3.1 : Flexbox Navbar */
+        .ex3-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+        }
+
+        .ex3-navbar .logo {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .ex3-nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ex3-nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .ex3-nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Exercice 3.2 : Flexbox Cartes */
+        .ex3-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .ex3-card {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+            background: #fff;
+            color: #333;
+        }
+
+        .ex3-card h3 {
+            margin-top: 0;
+        }
+
+        .ex3-card-link {
+            margin-top: auto;
+            display: inline-block;
+            padding: 10px;
+            background: #007bff;
+            color: #fff !important;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        /* Exercice 4.1 : Grid Responsive */
+        .ex4-grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .ex4-card {
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        /* Exercice 4.2 : CSS Grid Layout */
+        .ex4-page-layout {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            grid-template-columns: 150px 1fr;
+            grid-template-rows: auto 150px auto;
+            gap: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f1f3f5;
+        }
+
+        .ex4-page-layout>* {
+            padding: 1rem;
+            background: #fff;
+            border: 1px dashed #adb5bd;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        @media (max-width: 600px) {
+            .ex4-page-layout {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Exercice 6 : Variables CSS & Thème */
+        .ex6-container {
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .ex6-light {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --btn-bg: #0d6efd;
+            background-color: var(--bg-color);
+            color: var(--text-color) !important;
+        }
+
+        .ex6-light h3,
+        .ex6-light p,
+        .ex6-light code {
+            color: #212529 !important;
+        }
+
+        .ex6-dark h3,
+        .ex6-dark p,
+        .ex6-dark code {
+            color: #f8f9fa !important;
+        }
+
+        .ex6-dark {
+            --bg-color: #212529;
+            --text-color: #f8f9fa;
+            --btn-bg: #0d6efd;
+            background-color: var(--bg-color);
+            color: var(--text-color) !important;
+        }
+
+        .ex6-container code {
+            background-color: rgba(128, 128, 128, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .ex6-btn {
+            background-color: var(--btn-bg);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Exercice 7.1 : Bouton Animé */
+        .ex7-btn {
+            padding: 12px 24px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ex7-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Exercice 7.2 : Spinner */
+        .ex7-spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .ex7-spinner {
+            width: 50px;
+            height: 50px;
+            border: 6px solid #e9ecef;
+            border-top: 6px solid #17a2b8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Ex 1 and Quiz Answers styling */
+        .answer-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .answer-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 0 4px 4px 0;
+            color: #333;
+        }
+
+        .answer-list li code {
+            color: #d63384;
+            background-color: #fce8f3;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border, #e2e8f0);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">&lt;/&gt; EDDER TPs</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="nav-list" id="navList">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../tp1/index.html">TP1</a></li>
+                    <li><a href="../tp2/index.html">TP2</a></li>
+                    <li><a href="../tp3/index.html">TP3</a></li>
+                    <li><a href="index.html" class="active">TP CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Retour aux TPs</a>
+
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <p class="overline">Chapitre 4 — TP Complet</p>
+                <h1 style="font-size: clamp(1.5rem, 3vw, 2rem);">CSS3 &amp; Web Design</h1>
+                <p>Solutions pratiques couvrant les Sélecteurs, le Box Model, Flexbox, Grid, le Responsive Design et les
+                    Animations.</p>
+
+            </div>
+
+            <!-- Exercice 1 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 1 : Sélecteurs et spécificité</h2>
+
+                <h3 class="question-text">1.1 Sélecteurs</h3>
+                <p>Étant donné le HTML suivant, écrivez les sélecteurs CSS demandés :</p>
+                <p class="code-caption">Code HTML fourni :</p>
+                <pre><code>&lt;nav class="main-nav"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/" class="active"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/about"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;article class="post featured"&gt;
+    &lt;h2&gt;Premier article&lt;/h2&gt;
+    &lt;p&gt;Contenu...&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="post"&gt;
+    &lt;h2&gt;Deuxième article&lt;/h2&gt;
+    &lt;p&gt;Contenu...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+
+                <h4>Solutions :</h4>
+                <ul class="answer-list">
+                    <li><strong>Sélectionnez tous les liens dans la navigation :</strong> <code>.main-nav a</code> ou
+                        <code>nav.main-nav ul li a</code>
+                    </li>
+                    <li><strong>Sélectionnez uniquement le lien actif :</strong> <code>.main-nav a.active</code> ou
+                        <code>a.active</code>
+                    </li>
+                    <li><strong>Sélectionnez l'article qui a la classe featured :</strong>
+                        <code>article.post.featured</code>
+                    </li>
+                    <li><strong>Sélectionnez le premier paragraphe de chaque article :</strong>
+                        <code>article.post p:first-of-type</code>
+                    </li>
+                    <li><strong>Sélectionnez les éléments &lt;li&gt; pairs :</strong> <code>li:nth-child(even)</code>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h3 class="question-text">1.2 Spécificité</h3>
+                <p>Questions : Classez ces sélecteurs par spécificité croissante : <code>p</code>, <code>.text</code>,
+                    <code>#main</code>, <code>p.text</code>, <code>#main .text p</code>. Si deux règles ont la même
+                    spécificité, laquelle gagne ? Pourquoi faut-il éviter <code>!important</code> ?
+                </p>
+
+                <h4>Solutions :</h4>
+                <ul class="answer-list">
+                    <li><strong>Ordre croissant :</strong> <code>p</code> (0,0,1) &lt; <code>.text</code> (0,1,0) &lt;
+                        <code>p.text</code> (0,1,1) &lt; <code>#main</code> (1,0,0) &lt; <code>#main .text p</code>
+                        (1,1,1)
+                    </li>
+                    <li><strong>Égalité de spécificité :</strong> C'est la règle déclarée en <strong>dernier</strong>
+                        dans le fichier CSS qui l'emporte (effet de cascade).</li>
+                    <li><strong>Pourquoi éviter <code>!important</code> :</strong> Cela casse la cascade naturelle et
+                        rend la surcharge impossible sans réutiliser <code>!important</code>, ce qui rend le code
+                        incontrôlable.</li>
+                </ul>
+            </div>
+
+            <!-- Exercice 2 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 2 : Box Model</h2>
+
+                <h3 class="question-text">2.1 Comprendre le Box Model</h3>
+                <p class="code-caption">Code CSS fourni :</p>
+                <pre><code>.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #333;
+    margin: 15px;
+}</code></pre>
+                <p>Questions : Avec <code>box-sizing: content-box</code> (défaut), quelle est la largeur totale visible
+                    ? Avec <code>box-sizing: border-box</code>, quelle est la largeur totale visible ? Écrivez le reset
+                    CSS universel pour box-sizing.</p>
+
+                <h4>Solutions :</h4>
+                <ul class="answer-list">
+                    <li><strong>Largeur totale avec content-box :</strong> <code>350px</code> (300 width + 40 padding +
+                        10 border)</li>
+                    <li><strong>Largeur totale avec border-box :</strong> <code>300px</code> (le bord et le padding sont
+                        inclus dans la largeur donnée)</li>
+                </ul>
+                <p class="code-caption">Reset CSS Universel (code complet) :</p>
+                <pre><code>*, *::before, *::after {
+    box-sizing: border-box;
+}</code></pre>
+
+                <hr>
+
+                <h3 class="question-text">2.2 Centrer un élément</h3>
+                <p>Centrez horizontalement un élément <code>&lt;div&gt;</code> de 600px de large, puis centrez-le aussi
+                    verticalement dans la page.</p>
+
+                <h4>Solutions :</h4>
+                <p>On peut utiliser <code>position: absolute;</code> (une très belle alternative moderne serait
+                    <code>display: grid; place-items: center;</code> sur le parent).
+                </p>
+                <pre><code>/* La méthode position absolue pour le centrage complet */
+.center-div {
+    width: 600px;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+
+    /* Le centrage vertical/horizontal */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}</code></pre>
+                <div class="demo-box">
+                    <div class="ex2-container">
+                        <div class="ex2-center">
+                            Div Centrée
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercice 3 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 3 : Flexbox</h2>
+
+                <h3 class="question-text">3.1 Barre de navigation</h3>
+                <p>Créez une barre de navigation horizontale avec un logo à gauche et des liens à droite :</p>
+                <p class="code-caption">Code HTML fourni :</p>
+                <pre><code>&lt;nav class="navbar"&gt;
+  &lt;div class="logo"&gt;MonSite&lt;/div&gt;
+  &lt;ul class="nav-links"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+                <h4>Solutions :</h4>
+                <pre><code>.navbar {
+    display: flex;
+    justify-content: space-between; /* Espace équitable entre la gauche et la droite */
+    align-items: center; /* Aligné verticalement au centre */
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 20px; /* Écartement entre les liens */
+    list-style: none; /* Enlève les puces de <li> */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}</code></pre>
+                <div class="demo-box">
+                    <nav class="ex3-navbar">
+                        <div class="logo">MonSite</div>
+                        <ul class="ex3-nav-links">
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <hr>
+
+                <h3 class="question-text">3.2 Cartes de même hauteur</h3>
+                <p>Créez 3 cartes côte à côte avec un footer qui reste toujours en bas :</p>
+                <p class="code-caption">Code HTML fourni :</p>
+                <pre><code>&lt;div class="cards"&gt;
+  &lt;div class="card"&gt;
+    &lt;h3&gt;Carte 1&lt;/h3&gt;
+    &lt;p&gt;Contenu court.&lt;/p&gt;
+    &lt;a href="#" class="card-link"&gt;En savoir plus&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;!-- autres cartes... --&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Solutions :</h4>
+                <pre><code>.cards { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Agence les enfants de haut en bas */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1; /* Permet aux cartes de partager l'espace horizontal équitablement */
+}
+
+.card-link { 
+    margin-top: auto; /* Aligne le bouton tout en bas même s'il manque du texte */
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+}</code></pre>
+                <div class="demo-box" style="margin-top:0;">
+                    <div class="ex3-cards">
+                        <div class="ex3-card">
+                            <h3>Carte 1</h3>
+                            <p>Contenu court.</p>
+                            <a href="#" class="ex3-card-link">En savoir plus</a>
+                        </div>
+                        <div class="ex3-card">
+                            <h3>Carte 2</h3>
+                            <p>Contenu beaucoup plus long pour tester l'alignement vertical des boutons. Flexbox
+                                garantit que le bouton du bas reste poussé vers le bas grâce à
+                                <code>margin-top: auto</code> en étant en <code>flex-direction: column</code>.
+                            </p>
+                            <a href="#" class="ex3-card-link">En savoir plus</a>
+                        </div>
+                        <div class="ex3-card">
+                            <h3>Carte 3</h3>
+                            <p>Contenu moyen.</p>
+                            <a href="#" class="ex3-card-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercice 4 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 4 : CSS Grid</h2>
+
+                <h3 class="question-text">4.1 Grille de cartes responsive</h3>
+                <p>Créez une grille de cartes qui s'adapte automatiquement au nombre de colonnes :</p>
+                <p class="code-caption">Code HTML fourni :</p>
+                <pre><code>&lt;div class="grid-cards"&gt;
+  &lt;div class="card"&gt;Carte 1&lt;/div&gt;
+  ...
+  &lt;div class="card"&gt;Carte 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Solutions :</h4>
+                <pre><code>.grid-cards {
+    display: grid;
+    /* auto-fit répartit les colonnes, minmax garantit une largeur minimale de 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+}</code></pre>
+                <div class="demo-box">
+                    <div class="ex4-grid-cards">
+                        <div class="ex4-card">Carte 1</div>
+                        <div class="ex4-card">Carte 2</div>
+                        <div class="ex4-card">Carte 3</div>
+                        <div class="ex4-card">Carte 4</div>
+                        <div class="ex4-card">Carte 5</div>
+                        <div class="ex4-card">Carte 6</div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3 class="question-text">4.2 Layout complet avec Grid Areas</h3>
+                <p>Créez une mise en page complète : header, sidebar, main, footer.</p>
+                <p class="code-caption">Code HTML fourni :</p>
+                <pre><code>&lt;div class="page-layout"&gt;
+  &lt;header class="header"&gt;Header&lt;/header&gt;
+  &lt;nav class="sidebar"&gt;Sidebar&lt;/nav&gt;
+  &lt;main class="main"&gt;Contenu principal&lt;/main&gt;
+  &lt;footer class="footer"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Solutions :</h4>
+                <pre><code>.page-layout {
+    display: grid;
+    /* On nomme nos emplacements de layout */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    gap: 10px;
+}
+
+/* Attachement aux zones */
+.header  { grid-area: header; background: #333; color: white; padding: 20px; }
+.sidebar { grid-area: sidebar; background: #f4f4f4; padding: 20px; }
+.main    { grid-area: main; padding: 20px; }
+.footer  { grid-area: footer; background: #333; color: white; padding: 20px; text-align: center; }</code></pre>
+                <div class="demo-box" style="margin-top:0;">
+                    <div class="ex4-page-layout">
+                        <header class="header">Header</header>
+                        <nav class="sidebar">Sidebar</nav>
+                        <main class="main">Contenu principal</main>
+                        <footer class="footer">Footer</footer>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercice 5 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 5 : Responsive Design</h2>
+
+                <h3 class="question-text">5.1 Mobile First</h3>
+                <p>Transformez cette page pour qu'elle soit responsive (mobile first). Ajoutez les media queries pour
+                    tablette et desktop :</p>
+                <p class="code-caption">Code CSS fourni :</p>
+                <pre><code>/* Base mobile */
+.container { width: 100%; padding: 15px; }
+.nav-menu { display: flex; flex-direction: column; gap: 5px; }
+.content { display: block; }
+.sidebar { display: none; }</code></pre>
+
+                <h4>Solutions :</h4>
+                <pre><code>/* Base mobile */
+.container { 
+    width: 100%; 
+    padding: 15px; 
+}
+.nav-menu { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+}
+.content { 
+    display: block; 
+}
+.sidebar { 
+    display: none; /* Caché sur mobile */
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+    .nav-menu { 
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 30px;
+    }
+    .sidebar { 
+        display: block; /* On affiche la sidebar sur grand écran */
+    }
+}</code></pre>
+            </div>
+
+            <!-- Exercice 6 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 6 : Variables CSS et thèmes</h2>
+
+                <h3 class="question-text">6.1 Système de couleurs</h3>
+                <p>Créez un système de variables CSS pour un thème clair et sombre :</p>
+
+                <h4>Solutions :</h4>
+                <pre><code>/* Thème Clair - Par défaut */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+}
+
+/* Thème Sombre - Appliqué quand dataset theme="dark" */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --primary-color: #4da3ff;
+}
+
+/* Autre méthode: Media query système native */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #f5f5f5;
+    }
+}
+
+/* Application au Body et aux éléments globaux */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Transition douce au changement de couleur */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}</code></pre>
+                <div class="demo-box">
+                    <div class="ex6-container ex6-light" style="margin-bottom:1rem;">
+                        <h3>Thème Clair</h3>
+                        <p>Utilise <code>--bg-color: #f8f9fa;</code></p>
+                        <button class="ex6-btn">Bouton Primaire</button>
+                    </div>
+                    <div class="ex6-container ex6-dark">
+                        <h3>Thème Sombre</h3>
+                        <p>Utilise <code>--bg-color: #212529;</code></p>
+                        <button class="ex6-btn">Bouton Primaire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercice 7 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 7 : Transitions et animations</h2>
+
+                <h3 class="question-text">7.1 Bouton animé</h3>
+                <p>Créez un bouton avec des transitions au survol :</p>
+
+                <h4>Solutions :</h4>
+                <pre><code>.btn { 
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* La propriété transition gère tous les effets d'animation (fond et taille) */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+/* Effets animés lors du survol du bouton */
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Fait monter le bouton de 3px */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Ajoute de l'ombre de profondeur */
+}</code></pre>
+                <div class="demo-box" style="text-align: center;">
+                    <button class="ex7-btn">Survolez-moi !</button>
+                </div>
+
+                <hr>
+
+                <h3 class="question-text">7.2 Animation de chargement</h3>
+                <p>Créez un spinner de chargement avec <code>@keyframes</code> :</p>
+
+                <h4>Solutions :</h4>
+                <pre><code>.spinner {
+    width: 50px; 
+    height: 50px;
+    border: 6px solid #e9ecef; /* Couleur de l'anneau de base */
+    border-top: 6px solid #17a2b8; /* Couleur de la barre de temps qui tourne */
+    border-radius: 50%; /* Arrondi parfait = cercle */
+
+    /* Animation: "spin" tourne pendant 1 seconde de façon linéaire à l'infini */
+    animation: spin 1s linear infinite;
+}
+
+/* L'animation fait tourner l'objet de 0 à 360 degrés */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</code></pre>
+                <div class="demo-box">
+                    <div class="ex7-spinner-container">
+                        <div class="ex7-spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercice 8 -->
+            <div class="tp-exercise section">
+                <h2>Exercice 8 : Quiz de révision</h2>
+
+                <style>
+                    .quiz-question {
+                        margin-bottom: 2rem;
+                    }
+
+                    .quiz-question h4 {
+                        margin-bottom: 0.75rem;
+                        color: #fff;
+                    }
+
+                    .quiz-options {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .quiz-options li {
+                        padding: 0.5rem 1rem;
+                        margin-bottom: 0.5rem;
+                        background: #222;
+                        border-left: 4px solid #444;
+                        border-radius: 4px;
+                        color: #ddd;
+                        font-family: Consolas, Monaco, "Andale Mono", monospace;
+                        font-size: 0.9rem;
+                    }
+
+                    .quiz-options li.correct-answer {
+                        background: #194a2b;
+                        /* dark green */
+                        border-left-color: #28a745;
+                        color: #fff;
+                        font-weight: bold;
+                    }
+
+                    .explanation {
+                        font-size: 0.85rem;
+                        color: #aaa;
+                        margin-left: 1rem;
+                        font-weight: normal;
+                        font-family: inherit;
+                        font-style: italic;
+                    }
+                </style>
+
+                <div class="quiz-question">
+                    <h4>1. Quel sélecteur a la spécificité la plus haute ?</h4>
+                    <ul class="quiz-options">
+                        <li>[ ] a) .header .nav a</li>
+                        <li class="correct-answer">[x] b) #header a <span class="explanation">(ID a la plus grosse
+                                valeur : 100)</span></li>
+                        <li>[ ] c) header nav a</li>
+                        <li>[ ] d) a.active</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>2. Avec <code>box-sizing: border-box</code>, un élément avec <code>width: 200px</code> et
+                        <code>padding: 20px</code> a une largeur totale de :
+                    </h4>
+                    <ul class="quiz-options">
+                        <li>[ ] a) 240px</li>
+                        <li class="correct-answer">[x] b) 200px <span class="explanation">(Le padding est inclus à
+                                l'intérieur de la largeur configurée)</span></li>
+                        <li>[ ] c) 220px</li>
+                        <li>[ ] d) 160px</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>3. Pour centrer un élément verticalement et horizontalement avec Flexbox :</h4>
+                    <ul class="quiz-options">
+                        <li>[ ] a) justify-content: center</li>
+                        <li>[ ] b) align-items: center</li>
+                        <li class="correct-answer">[x] c) justify-content: center ET align-items: center</li>
+                        <li>[ ] d) text-align: center</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>4. La valeur <code>1fr</code> en CSS Grid signifie :</h4>
+                    <ul class="quiz-options">
+                        <li>[ ] a) 1 pixel</li>
+                        <li class="correct-answer">[x] b) 1 fraction de l'espace disponible</li>
+                        <li>[ ] c) 1 pourcentage</li>
+                        <li>[ ] d) 1 rem</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>5. L'approche "Mobile First" utilise :</h4>
+                    <ul class="quiz-options">
+                        <li>[ ] a) max-width dans les media queries</li>
+                        <li class="correct-answer">[x] b) min-width dans les media queries <span class="explanation">(Le
+                                code par défaut est pour mobile, min-width surpasse pour grands écrans)</span></li>
+                        <li>[ ] c) device-width</li>
+                        <li>[ ] d) orientation</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Navigation secondaire">
+                <a href="../index.html">Accueil</a>
+                <a href="../tp1/index.html">TP1</a>
+                <a href="../tp2/index.html">TP2</a>
+                <a href="../tp3/index.html">TP3</a>
+            </nav>
+            <p>&copy; 2026 Mohamed Ed-Deryouch &middot; TP CSS3 Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function () {
+            var list = document.getElementById('navList');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            list.classList.toggle('active');
+            this.innerHTML = expanded ? '&#9776;' : '&#10005;';
+        });
+    </script>
+</body>
+
+</html>
